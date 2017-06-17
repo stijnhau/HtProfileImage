@@ -1,4 +1,8 @@
 <?php
+namespace HtProfileImage;
+
+use Zend\Router\Http\Segment;
+
 return [
     'translator' => array(
         'translation_file_patterns' => array(
@@ -20,7 +24,7 @@ return [
             'zfcuser' => [
                 'child_routes' => [
                     'htimageupload' => [
-                        'type' => 'Segment',
+                        'type' => Segment::class,
                         'options' => [
                             'route' => '/upload-image[/:userId]',
                             'defaults' => [
@@ -30,7 +34,7 @@ return [
                         ]
                     ],
                     'htimagedisplay' => [
-                        'type' => 'Segment',
+                        'type' => Segment::class,
                         'options' => [
                             'route' => '/display-image/:id[/]',
                             'defaults' => [
@@ -40,7 +44,7 @@ return [
                         ]
                     ],
                     'htimagedelete' => [
-                        'type' => 'Segment',
+                        'type' => Segment::class,
                         'options' => [
                             'route' => '/delete-image[/:userId]',
                             'defaults' => [
